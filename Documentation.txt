@@ -1,0 +1,30 @@
+---Features I want for my tank to have:
+
+WASD Movement for the base, independent of the camera.
+
+Turret moves around left and right, while guns aim up and down on the same direction as the camera.
+
+Jump boost, make the tank able to jump in the air.
+
+Make the turrets able to instantiate a projectile and shoot it.
+
+Add a model and animate it for the tank. Spider legs hull and Twin cannons turret.
+
+
+
+---How I am going to test it:
+
+I will make sure every part does its purpose for example I got the hull of the tank to move independently of the turret/camera direction.
+
+
+
+
+
+---As of 27/01/2026:
+
+
+I added WASD Movement to the hull of the tank.
+
+I made the turret left and right follow camera direction.
+
+I added a pivot point for the turret's guns to aim at. The turret's gun can look up and down while the turret stays in place looking only at Y level.
