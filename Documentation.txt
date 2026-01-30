@@ -28,3 +28,14 @@ I added WASD Movement to the hull of the tank.
 I made the turret left and right follow camera direction.
 
 I added a pivot point for the turret's guns to aim at. The turret's gun can look up and down while the turret stays in place looking only at Y level.
+
+
+---As of 30/01/2026
+
+I added a JUMP Boost to the movement script
+
+Reworked the scaling of the tank and turret
+
+Added a few platforms
+
+More comments in the script
