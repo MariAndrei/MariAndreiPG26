@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 994790474}
   - component: {fileID: 994790473}
   - component: {fileID: 994790472}
+  - component: {fileID: 994790475}
   m_Layer: 0
   m_Name: GunLeft
   m_TagString: Untagged
@@ -778,6 +779,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994790470}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &994790475
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994790470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edd471a15ecdefa4681affacf49e922e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1054123428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1030,7 @@ GameObject:
   - component: {fileID: 1545423345}
   - component: {fileID: 1545423344}
   - component: {fileID: 1545423343}
+  - component: {fileID: 1545423346}
   m_Layer: 0
   m_Name: GunRight
   m_TagString: Untagged
@@ -1105,6 +1129,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545423341}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1545423346
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545423341}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79042b807d9b25845bcfc6f09c99cdbc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1801240920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1209,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801240920}
   serializedVersion: 5
-  m_Mass: 5
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1391,13 +1437,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020805083}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.012031, y: 0.3, z: 7.9451504}
+  m_LocalRotation: {x: -0.029551793, y: -0, z: -0, w: 0.9995633}
+  m_LocalPosition: {x: 13.012031, y: 0.3, z: 7.7299995}
   m_LocalScale: {x: 7.8692, y: 0.84166, z: 14.582}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 528474812}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.387, y: 0, z: 0}
 --- !u!1 &2135908670
 GameObject:
   m_ObjectHideFlags: 0

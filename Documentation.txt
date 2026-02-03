@@ -39,3 +39,11 @@ Reworked the scaling of the tank and turret
 Added a few platforms
 
 More comments in the script
+
+
+---As of 03/02/2026
+
+I plan on adding a firing feature which will involve instantiating a visual effect
+
+Added animation for the Turret Guns
+

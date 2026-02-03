@@ -20,6 +20,8 @@ public class BaseControlScript : MonoBehaviour
     private float playerHeight = 4;
     public LayerMask whatIsGround;
     bool grounded;
+    AnimationClip[] clips;
+    Animator leftGunAnim, rightGunAnim;
 
     Transform turret, leftGun, rightGun, gunMounting;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +30,11 @@ public class BaseControlScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         readyToJump = true;
+
+        Animator[] animators = GetComponentsInChildren<Animator>();
+        leftGunAnim = animators[0];
+        rightGunAnim = animators[1];
+
 
         turretTarget = Camera.main.transform.position + Camera.main.transform.forward * 1000f;
         turret = transform.GetChild(1);
@@ -62,6 +69,14 @@ public class BaseControlScript : MonoBehaviour
         {
             transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
         }
+
+        //SHOOTING  
+
+
+        leftGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(1));
+
+        rightGunAnim.SetBool("Fire", Input.GetMouseButtonDown(0));
+
 
         //JUMP 
 
