@@ -12,6 +12,7 @@ public class BaseControlScript : MonoBehaviour
     private float jumpCooldown = 1;
     bool readyToJump;
 
+    GameObject crosshairs;
 
     float speed = 5f;
     float turnSpeed = 45f;
@@ -27,6 +28,7 @@ public class BaseControlScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
 
         readyToJump = true;
@@ -35,7 +37,12 @@ public class BaseControlScript : MonoBehaviour
         leftGunAnim = animators[0];
         rightGunAnim = animators[1];
 
+        crosshairs = GameObject.Find("Crosshair");
+        if (crosshairs != null) { print("found"); }
+        UnityEngine.UI.Image ch = crosshairs.GetComponent<UnityEngine.UI.Image>();
 
+
+        ch.color = new Color(0, 0, 1, 0.05f);
         turretTarget = Camera.main.transform.position + Camera.main.transform.forward * 1000f;
         turret = transform.GetChild(1);
         gunMounting = turret.GetChild(0);
@@ -44,6 +51,8 @@ public class BaseControlScript : MonoBehaviour
         print(turret.name);
         print(leftGun.name);
         print(rightGun.name);
+
+
 
 
     }
