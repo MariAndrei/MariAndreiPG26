@@ -47,3 +47,6 @@ I plan on adding a firing feature which will involve instantiating a visual effe
 
 Added animation for the Turret Guns
 
+---As of 06/02/2026
+
+I added a cursor and a Raycast to the camera of the turret in order to prepare for the shooting mechanic
