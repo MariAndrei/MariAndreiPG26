@@ -42,15 +42,15 @@ public class BaseControlScript : MonoBehaviour
         UnityEngine.UI.Image ch = crosshairs.GetComponent<UnityEngine.UI.Image>();
 
 
-        ch.color = new Color(0, 0, 1, 0.05f);
+        ch.color = new Color(0, 0, 1, 0.7f);
         turretTarget = Camera.main.transform.position + Camera.main.transform.forward * 1000f;
         turret = transform.GetChild(1);
         gunMounting = turret.GetChild(0);
         leftGun = gunMounting.GetChild(0);
         rightGun = gunMounting.GetChild(1);
-        print(turret.name);
-        print(leftGun.name);
-        print(rightGun.name);
+        //print(turret.name);
+        //print(leftGun.name);
+        //print(rightGun.name);
 
 
 
@@ -83,9 +83,11 @@ public class BaseControlScript : MonoBehaviour
 
 
         leftGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(1));
+        
+
 
         rightGunAnim.SetBool("Fire", Input.GetMouseButtonDown(0));
-
+        
 
         //JUMP 
 

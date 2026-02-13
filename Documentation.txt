@@ -50,3 +50,7 @@ Added animation for the Turret Guns
 ---As of 06/02/2026
 
 I added a cursor and a Raycast to the camera of the turret in order to prepare for the shooting mechanic
+
+---As of 13/02/2026
+
+I added a target health script and damage script to my turret, made the target flash a color when hit as hit feedback using switch case.

@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 240306758}
   - component: {fileID: 240306757}
   - component: {fileID: 240306756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 500216213}
   - component: {fileID: 500216212}
   - component: {fileID: 500216211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 799950668}
   - component: {fileID: 799950667}
   - component: {fileID: 799950666}
+  - component: {fileID: 799950670}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -845,6 +846,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!23 &799950670
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799950665}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &994790470
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +904,7 @@ GameObject:
   - component: {fileID: 994790473}
   - component: {fileID: 994790472}
   - component: {fileID: 994790475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1116,7 @@ GameObject:
   - component: {fileID: 1054123431}
   - component: {fileID: 1054123430}
   - component: {fileID: 1054123433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,6 +1333,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 528474812}
   m_LocalEulerAnglesHint: {x: -23.715, y: 0, z: 0}
+--- !u!23 &1325170030 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2907518833767397045, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+  m_PrefabInstance: {fileID: 1622284667689782102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1545423341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1351,7 @@ GameObject:
   - component: {fileID: 1545423344}
   - component: {fileID: 1545423343}
   - component: {fileID: 1545423346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,7 +1482,7 @@ GameObject:
   - component: {fileID: 1801240921}
   - component: {fileID: 1801240922}
   - component: {fileID: 1801240923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2135908671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMounting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,6 +1798,71 @@ Transform:
   - {fileID: 240306758}
   m_Father: {fileID: 1054123429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1622284667689782102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 869102737298120831, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 1325170030}
+    - target: {fileID: 2907518833767397045, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665737265614461159, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070263384589954220, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
+      propertyPath: m_Name
+      value: DamageTester
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91764929bb409234dbd6b5715dbc63e9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1757,3 +1873,4 @@ SceneRoots:
   - {fileID: 528474812}
   - {fileID: 799950669}
   - {fileID: 994792137}
+  - {fileID: 1622284667689782102}
