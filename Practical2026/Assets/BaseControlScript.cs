@@ -45,7 +45,7 @@ public class BaseControlScript : MonoBehaviour
         ch.color = new Color(0, 0, 1, 0.7f);
         turretTarget = Camera.main.transform.position + Camera.main.transform.forward * 1000f;
         turret = transform.GetChild(1);
-        gunMounting = turret.GetChild(0);
+        gunMounting = turret.GetChild(2);
         leftGun = gunMounting.GetChild(0);
         rightGun = gunMounting.GetChild(1);
         //print(turret.name);
@@ -82,16 +82,16 @@ public class BaseControlScript : MonoBehaviour
         //SHOOTING  
 
 
-        leftGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(1));
+        leftGunAnim.SetBool("Fire", Input.GetMouseButtonDown(1));
         
 
 
-        rightGunAnim.SetBool("Fire", Input.GetMouseButtonDown(0));
+        rightGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(0));
         
 
         //JUMP 
 
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.8f + 0.3f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.8f + 0.5f, whatIsGround);
 
         //-- Checks for RayCast and also prints if the tank is grounded.
         //Debug.DrawRay(transform.position, (playerHeight * 0.5f + 0.3f) * Vector3.down);
