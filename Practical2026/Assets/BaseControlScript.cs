@@ -82,11 +82,11 @@ public class BaseControlScript : MonoBehaviour
         //SHOOTING  
 
 
-        leftGunAnim.SetBool("Fire", Input.GetMouseButtonDown(1));
+        leftGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(0));
         
 
 
-        rightGunAnim.SetBool("Fire2", Input.GetMouseButtonDown(0));
+        rightGunAnim.SetBool("Fire", Input.GetMouseButtonDown(1));
         
 
         //JUMP 

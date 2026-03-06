@@ -45,7 +45,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Fire2
+    m_ConditionEvent: Fire
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2991562341124873682}
@@ -152,7 +152,7 @@ AnimatorController:
   m_Name: GunRight
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Fire2
+  - m_Name: Fire
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
