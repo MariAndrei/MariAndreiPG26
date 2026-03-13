@@ -6,7 +6,7 @@ Turret moves around left and right, while guns aim up and down on the same direc
 
 Jump boost, make the tank able to jump in the air.
 
-Make the turrets able to instantiate a projectile and shoot it.
+Make the turrets able to shoot and generate an explosion effect at the Raycast point.
 
 Add a model and animate it for the tank. Spider legs hull and Twin cannons turret.
 
@@ -58,3 +58,8 @@ I added a target health script and damage script to my turret, made the target f
 ---As of 06/03/2026
 
 I fixed the turret animation
+
+---As of 13/03/2026
+
+I added a firing cooldown, as well as a crosshair indicator for both cannons
+I moved the code from TurretControl script to BaseControl script
