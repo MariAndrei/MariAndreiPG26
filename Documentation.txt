@@ -63,3 +63,9 @@ I fixed the turret animation
 
 I added a firing cooldown, as well as a crosshair indicator for both cannons
 I moved the code from TurretControl script to BaseControl script
+
+---As of 20/03/2026
+
+I have added recoil screenshake when shooting
+Also added a overlap sphere to do damage in a radius as an area of effect
+Added IHealth inheritance for objects to be able to take damage

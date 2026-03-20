@@ -3,28 +3,35 @@ using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using System;
 
 public class BaseControlScript : MonoBehaviour
 {
+   
 
+    [Header("Shooting Settings")]
     private float range = 100f;
     private float rayDistance = 3.5f;
     private float damage = 25f;
 
+    [Header("Gun cooldown")]
     float cooldown = 1.5f;
     float leftCooldown = 0f;
     float rightCooldown = 0f;
 
     Rigidbody rb;
 
+    [Header("Jump cooldown")]
     private float groundDrag = 1;
 
     private float jumpForce = 10;
     private float jumpCooldown = 2;
     bool readyToJump;
 
-    GameObject crosshairs;
+    CameraShake cam;
 
+    GameObject crosshairs;
+    [Header("Character speed")]
     float speed = 5f;
     float turnSpeed = 45f;
     Vector3 turretTarget;
@@ -68,10 +75,12 @@ public class BaseControlScript : MonoBehaviour
         //print(leftGun.name);
         //print(rightGun.name);
 
-
+        cam = Camera.main.GetComponent<CameraShake>();
 
 
     }
+
+   
 
     // Update is called once per frame
     void Update()
@@ -81,6 +90,7 @@ public class BaseControlScript : MonoBehaviour
         leftCooldown -= Time.deltaTime;
         rightCooldown -= Time.deltaTime;
         
+        //MOVEMENT
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += speed * transform.forward * Time.deltaTime;
@@ -98,7 +108,7 @@ public class BaseControlScript : MonoBehaviour
         {
             transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
         }
-
+        //Jump keybind, checks if its grounded and the cooldown
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded)
         {
 
@@ -109,7 +119,7 @@ public class BaseControlScript : MonoBehaviour
             Invoke(nameof(resetJump), jumpCooldown);
 
         }
-
+        
 
 
         // Handling drag 
@@ -127,20 +137,27 @@ public class BaseControlScript : MonoBehaviour
         {
             leftGunAnim.SetBool("Fire2", true);
             leftCooldown = cooldown;
+
+            cam.startShake(0.15f, 0.05f, 1.0f);
+
             if (Physics.Raycast(Camera.main.transform.position + transform.forward * rayDistance, Camera.main.transform.forward, out hit, range))
             {
                 Debug.Log(hit.transform.name);
 
-
-                Target target = hit.transform.GetComponent<Target>();
+                aoeDamage(hit.point, 15f, 155f);
+                IHealth target = hit.transform.GetComponent<IHealth>();
                 if (target != null)
                 {
 
                     target.takeDamage(damage);
+                    
 
                 }
             }
         }
+
+        
+
         if ((cooldown - leftCooldown) > resetAnimation) { leftGunAnim.SetBool("Fire2", false); }
 
         IMG1.fillAmount = Mathf.Clamp((cooldown - leftCooldown)/cooldown, 0, 1);
@@ -150,12 +167,15 @@ public class BaseControlScript : MonoBehaviour
         {
             rightGunAnim.SetBool("Fire", true);
             rightCooldown = cooldown;
+
+            cam.startShake(0.15f, 0.05f, 1.0f);
+
             if (Physics.Raycast(Camera.main.transform.position + transform.forward * rayDistance, Camera.main.transform.forward, out hit, range))
             {
                 Debug.Log(hit.transform.name);
 
-
-                Target target = hit.transform.GetComponent<Target>();
+                aoeDamage(hit.point, 15f, 155f);
+                IHealth target = hit.transform.GetComponent<IHealth>();
                 if (target != null)
                 {
 
@@ -164,30 +184,44 @@ public class BaseControlScript : MonoBehaviour
                 }
             }
         }
+
+       
+
         if ((cooldown - rightCooldown) > resetAnimation) { rightGunAnim.SetBool("Fire", false); }
 
         IMG2.fillAmount = Mathf.Clamp((cooldown - rightCooldown) / cooldown, 0, 1);
-        //JUMP 
-
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 1f + 0.1f, whatIsGround);
 
         //-- Checks for RayCast and also prints if the tank is grounded.
         //Debug.DrawRay(transform.position, (playerHeight * 0.5f + 0.3f) * Vector3.down);
         //print(grounded);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 1f + 0.1f, whatIsGround);
 
-        //Jump keybind, checks if its grounded and the cooldown
-        
-
+        //Aims the turret and cannons in the direction of the pivot
         turretTarget = RotatePointAroundPivot(turretTarget, turret.position, Quaternion.AngleAxis(Input.GetAxis("THorizontal") * turnSpeed * Time.deltaTime, transform.up));
 
-        
         turretTarget = RotatePointAroundPivot(turretTarget, turret.position, Quaternion.AngleAxis(Input.GetAxis("TVertical") * turnSpeed * Time.deltaTime,turret.right ));
         turret.LookAt(new Vector3(turretTarget.x, turret.position.y, turretTarget.z), transform.up);
         
         gunMounting.LookAt(turretTarget);
 
 
+
+
     }
+
+    private void aoeDamage(Vector3 point, float radius, float damage)
+    {
+        Collider[] aoe = Physics.OverlapSphere(point, radius);
+        foreach (Collider c in aoe)
+        {
+            if (c.gameObject.GetComponent<IHealth>() != null)
+            {
+                Debug.Log("I have health");
+            }
+        }
+    }
+
+
 
     //Method called after the jump is activated, with a delay by the JumpCooldown.
     private void resetJump()

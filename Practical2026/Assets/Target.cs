@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour, IHealth
 {
     public Renderer rend;
     private Color startColor;
     private Color endColor = Color.red;
-    private float flashDuration = 0.3f;
-    float DeFlashDuration = 0.1f;
+    private float flashDuration = 0.1f;
+    float DeFlashDuration = 0.05f;
     private float health = 50f;
     float effectTimer;
     private void Start()
