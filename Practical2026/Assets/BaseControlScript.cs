@@ -1,9 +1,10 @@
+using System;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
-using Unity.VisualScripting;
-using System;
+using static UnityEngine.GraphicsBuffer;
 
 public class BaseControlScript : MonoBehaviour
 {
@@ -214,8 +215,10 @@ public class BaseControlScript : MonoBehaviour
         Collider[] aoe = Physics.OverlapSphere(point, radius);
         foreach (Collider c in aoe)
         {
+
             if (c.gameObject.GetComponent<IHealth>() != null)
             {
+                
                 Debug.Log("I have health");
             }
         }

@@ -1,8 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Target : MonoBehaviour, IHealth
 {
+
+    public Slider TargetHp;
+    public Image HealthFill;
+    public float currentHealth, maxHealth = 50f;
+
+
     public Renderer rend;
     private Color startColor;
     private Color endColor = Color.red;
